@@ -3,6 +3,7 @@ body {
     background-size: cover;
 }
 
+
 a {
     cursor: cell;
 }
@@ -69,7 +70,7 @@ img {
 }
 
 .grid {
-    width:650px;
+    width: 650px;
     height: 650px;
     display: flex;
     border-style: solid;
@@ -79,13 +80,13 @@ img {
     border-bottom: transparent;
     border-right: transparent;
     border-width: 10px;
-    background-color: transparent;
     background-color: antiquewhite;
     justify-content: center;
     flex-wrap: wrap;
     padding: 0px;
     margin-top: -10px;
     box-shadow: 9px 9px teal;
+    overflow: hidden;
 }
 
 div.c {
@@ -135,7 +136,7 @@ p.title {
     appearance: none;
     width: 50px; /* Set a specific slider handle width */
     height: 50px; /* Slider handle height */
-    background: url(sky.jpg); /* Green background */
+    background-image: url(./images/sky.jpg); /* Green background */
     cursor: cell; /* Cursor on hover */
     border-radius: 25px;
     border-style: groove;
@@ -258,4 +259,4 @@ p.title {
     60%{color: green;}
     80%{color: DeepPink;}
     100%{color: orange;}
-  }
+}
