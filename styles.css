@@ -11,8 +11,12 @@ a {
 img {
     border-radius: 12px;
     border-color: transparent;
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
+}
+
+.title {
+    cursor: default;
 }
 
 .header-container {
@@ -29,19 +33,29 @@ img {
 
 .icons {
     border-radius: 12px;
-    height: 100px;
-    width: 100px;
+    height: 10vh;
+    width: 10vh;
     border-color: transparent;
 }
 
 .icon-buttons {
-    background-color: transparent;
+    background-color: teal;
     border-radius: 12px;
-    height: 100px;
-    width: 100px;
+    border-color: transparent;
+    height: 10vh;
+    width: 10vh;
     margin: 0px;
     padding: 0px;
-    box-shadow: 7px 8px teal;
+    /*box-shadow: 7px 8px teal;*/
+}
+
+.icon-buttons img:hover {
+    transform: translate(-1vh);
+    transition: transform 0.3s ease-in;
+}
+
+.icon-buttons img:not(:hover) {
+    transition: 0.3s ease-out;
 }
 
 .header {
@@ -59,6 +73,7 @@ img {
 .about-me {
     padding-top: 10px;
     font-size: 25px;
+    cursor: default;
 }
 
 .outer {

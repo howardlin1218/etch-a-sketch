@@ -3,7 +3,7 @@ const slider = document.getElementById("myRange");
 const gridSize = document.querySelector(".grid-size");
 var num1 = +slider.value;
 gridSize.textContent = "grid size: " + slider.value + "x" + slider.value;
-
+var isDown = false;
 //loop to see how many grids to generate 
 const outerBox = document.querySelector(".grid");
 var marginOrNo = false;
@@ -53,15 +53,25 @@ function rainbow() {
     const allBoxes = document.getElementsByClassName("c");
     const arrayLength = allBoxes.length;
     for(let i = 0; i < arrayLength; i++){
-        const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        allBoxes[i].addEventListener("mouseover", ()=> allBoxes[i].style.backgroundColor = '#'+randomColor);
+        //const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        allBoxes[i].addEventListener("mouseover", event=> {
+            if (event.buttons === 1) {
+                allBoxes[i].style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            }
+        });
+        allBoxes[i].addEventListener("mousedown", ()=>allBoxes[i].style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16));
     }
 }
 function eraser() {
     const allBoxes = document.getElementsByClassName("c");
     const arrayLength = allBoxes.length;
     for(let i = 0; i < arrayLength; i++){
-        allBoxes[i].addEventListener("mouseover", ()=> allBoxes[i].style.backgroundColor = 'antiquewhite');
+        allBoxes[i].addEventListener("mouseover", event=> {
+            if (event.buttons === 1) {
+                allBoxes[i].style.backgroundColor = "antiquewhite";
+            }
+        });
+        allBoxes[i].addEventListener("mousedown", ()=>allBoxes[i].style.backgroundColor = "antiquewhite");
     }
 }
 
@@ -77,7 +87,12 @@ function changeToGreen(){
     const allBoxes = document.getElementsByClassName("c");
     const arrayLength = allBoxes.length;
     for(let i = 0; i < arrayLength; i++){
-        allBoxes[i].addEventListener("mouseover", ()=> allBoxes[i].style.backgroundColor = 'green');
+        allBoxes[i].addEventListener("mouseover", event=> {
+            if (event.buttons === 1) {
+                allBoxes[i].style.backgroundColor = "green";
+            }
+        });
+        allBoxes[i].addEventListener("mousedown", ()=>allBoxes[i].style.backgroundColor = "green");
     }
 }
 
@@ -85,7 +100,12 @@ function changeToRed(){
     const allBoxes = document.getElementsByClassName("c");
     const arrayLength = allBoxes.length;
     for(let i = 0; i < arrayLength; i++){
-        allBoxes[i].addEventListener("mouseover", ()=> allBoxes[i].style.backgroundColor = 'red');
+        allBoxes[i].addEventListener("mouseover", event=> {
+            if (event.buttons === 1) {
+                allBoxes[i].style.backgroundColor = "red";
+            }
+        });
+        allBoxes[i].addEventListener("mousedown", ()=>allBoxes[i].style.backgroundColor = "red");
     }
 }
 
@@ -93,7 +113,12 @@ function changeToBlue(){
     const allBoxes = document.getElementsByClassName("c");
     const arrayLength = allBoxes.length;
     for(let i = 0; i < arrayLength; i++){
-        allBoxes[i].addEventListener("mouseover", ()=> allBoxes[i].style.backgroundColor = 'blue');
+        allBoxes[i].addEventListener("mouseover", event=> {
+            if (event.buttons === 1) {
+                allBoxes[i].style.backgroundColor = "blue";
+            }
+        });
+        allBoxes[i].addEventListener("mousedown", ()=>allBoxes[i].style.backgroundColor = "blue");
     }
 }
 
