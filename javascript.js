@@ -3,13 +3,11 @@ const slider = document.getElementById("myRange");
 const gridSize = document.querySelector(".grid-size");
 var num1 = +slider.value;
 gridSize.textContent = "grid size: " + slider.value + "x" + slider.value;
-var isDown = false;
 //loop to see how many grids to generate 
 const outerBox = document.querySelector(".grid");
 var marginOrNo = false;
 function generateGrid (num){
     const widthAndHeight = ((650-(num-1)*2)/num) + "px";
-    console.log(widthAndHeight);
     num *= num;
     if(num <= 100){
         marginOrNo = true;
@@ -48,6 +46,22 @@ const bButton = document.getElementById("blue");
 const eButton = document.getElementById("clear");
 const eraserButton = document.getElementById("eraser");
 const rainbowButton = document.getElementById("rainbow");
+const cSelectButton = document.getElementById("c-select-btn");
+
+function enterColor() {
+    const clr = document.getElementById("enter-color").value;
+    const allBoxes = document.getElementsByClassName("c");
+    const arrayLength = allBoxes.length;
+    for(let i = 0; i < arrayLength; i++){
+        //const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        allBoxes[i].addEventListener("mouseover", event=> {
+            if (event.buttons === 1) {
+                allBoxes[i].style.backgroundColor = clr.toString();
+            }
+        });
+        allBoxes[i].addEventListener("mousedown", ()=>allBoxes[i].style.backgroundColor = clr.toString());
+    }
+}
 
 function rainbow() {
     const allBoxes = document.getElementsByClassName("c");
@@ -129,3 +143,4 @@ bButton.addEventListener("click", changeToBlue);
 eButton.addEventListener("click", eraseAll);
 eraserButton.addEventListener("click", eraser);
 rainbowButton.addEventListener("click", rainbow);
+cSelectButton.addEventListener("click", enterColor);
